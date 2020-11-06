@@ -151,5 +151,7 @@ Please take a look at the past [Bullseye Software Release Notes](http://kb.bulls
 = 1.0 =
 * First version, enjoy!
 
+= 1.0.2 =
+* Fixed broken admin UI after upgrade to WP 5.5
 
 == Upgrade Notice ==
