@@ -145,9 +145,9 @@ class Controller {
 
     $interfaceFound = $interfaceOption->getByName($interface);
     if ($interfaceFound) {
-      echo $interfaceFound->getPublishCode();
+      return $interfaceFound->getPublishCode();
     } else {
-      echo "Bullseye interface $interface not found";
+      return "Bullseye interface $interface not found";
     }
   }
 

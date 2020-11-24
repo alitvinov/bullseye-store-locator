@@ -154,4 +154,7 @@ Please take a look at the past [Bullseye Software Release Notes](http://kb.bulls
 = 1.0.2 =
 * Fixed broken admin UI after upgrade to WP 5.5
 
+= 1.0.3 =
+* Improved shortcode output
+
 == Upgrade Notice ==
