@@ -28,6 +28,7 @@ class RestAdmin {
    * @var bool
    */
   private $enable = true;
+  private $safeSiteUrl = '';
 
   const HTTP_OK = 200;
   const HTTP_GET = 1;
@@ -41,6 +42,8 @@ class RestAdmin {
     if (getenv('API_URL')) {
       $this->url = getenv('API_URL');
     }
+
+    $this->safeSiteUrl = preg_replace('/(http(s)?:\/\/)|(www)|([^A-Za-z0-9])+/', '', get_site_url());
   }
 
   /**
@@ -49,7 +52,7 @@ class RestAdmin {
    */
   public function getPluginAccount() {
     $args = array();
-    $args['ShopName'] = get_site_url();
+    $args['ShopName'] = $this->safeSiteUrl;
     list($httpcode, $jsonResponse) = $this->query(self::HTTP_GET, 'getpluginaccount', $args);
     if ($httpcode !== self::HTTP_OK) {
       return false;
@@ -143,7 +146,7 @@ class RestAdmin {
 
   public function createDefaultInterface($clientId) {
     $args = array();
-    $args['StoreName'] = get_site_url();
+    $args['StoreName'] = $this->safeSiteUrl;
     $args['Template'] = 'wordpress';
     $args['ClientID'] = $clientId;
 
@@ -163,7 +166,7 @@ class RestAdmin {
     $args['ClientID'] = $clientId;
     $args['PluginType'] = 2;
     $args['UserName'] = $userName;
-    $args['ShopName'] = get_site_url();
+    $args['ShopName'] = $this->safeSiteUrl;
     //$args['InterfaceName'] = $defaultInterface;
     list($httpcode, $jsonResponse) = $this->query(self::HTTP_POST, 'linkbullseyeaccount', $args);
     if ($httpcode !== self::HTTP_OK) {
@@ -180,7 +183,7 @@ class RestAdmin {
     $args = array();
     $args['ClientID'] = $clientId;
     $args['UserName'] = $userName;
-    $args['Url'] = get_site_url();
+    $args['Url'] = $this->safeSiteUrl;
     list($httpcode, $jsonResponse) = $this->query(self::HTTP_POST, 'DeleteBullseyePluginAccount', $args);
     if ($httpcode !== self::HTTP_OK) {
       return false;
