@@ -160,4 +160,7 @@ Please take a look at the past [Bullseye Software Release Notes](http://kb.bulls
 = 1.0.4 =
 * Fixed issues with special characters in store name
 
+= 1.0.5 =
+* Implemented DB cleanup upon plugin deactivation
+
 == Upgrade Notice ==

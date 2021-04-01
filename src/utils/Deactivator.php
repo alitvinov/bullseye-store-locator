@@ -34,6 +34,9 @@ class Deactivator {
     //delete WP option from database
     $accountOption = new \BullseyeLocations\options\Account();
     $accountOption->remove();
+
+    //delete interfaces WP option from database
+    delete_option('bullseye-interface');
   }
 
 }

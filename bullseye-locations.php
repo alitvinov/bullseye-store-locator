@@ -4,7 +4,7 @@
  * Plugin Name:       Bullseye Store Locator
  * Plugin URI:        https://wordpress.org/plugins/bullseye-store-locator/
  * Description:       Bullseye is the original cloud-based store locator solution. Install and customize in minutes—no plugin updates required or hidden add-on costs.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Bullseye Locations
  * Author URI:        http://www.bullseyelocations.com/
  * License:           GPL-2.0
