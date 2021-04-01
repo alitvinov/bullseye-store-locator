@@ -157,4 +157,7 @@ Please take a look at the past [Bullseye Software Release Notes](http://kb.bulls
 = 1.0.3 =
 * Improved shortcode output
 
+= 1.0.4 =
+* Fixed issues with special characters in store name
+
 == Upgrade Notice ==
